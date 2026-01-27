@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const App = () => {
   return (
@@ -8,13 +8,3 @@ const App = () => {
 
 export default App
 
-
-
-
-
-
-
-
-// git branch -M main
-// git remote add origin https://github.com/ernazarovogabek/preyect-green-shop-onlin-magazen.git
-// git push -u origin main
