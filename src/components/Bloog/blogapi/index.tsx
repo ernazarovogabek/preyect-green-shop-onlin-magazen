@@ -22,6 +22,8 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
   const [loading, setLoading] = useState(false);
 
   const onFinish = (values: { email: string; passowrd: string }) => {
+     console.log("Kiritilgan ma'lumotlar:", values); 
+    
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -29,6 +31,8 @@ const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
       onLoginSuccess(); 
     }, 1500);
   };
+
+
 
   return (
     <div className="w-full px-6 py-4">
