@@ -66,7 +66,7 @@ mutate(e)
 
            <p className="text-end mt-2 text-[#46A358] text-sm cursor-pointer">Forgot Password?</p>
 
-              <button className="bg-[#46A358] w-full mt-4 text-white  h-[40px] rounded-md">
+              <button className="bg-[#46A358] w-full mt-4 text-white  h-[40px] rounded-md flex items-center justify-center">
                 {isPending? <Loader className="animate-spin"/>: "Login"  }
               </button>
                
@@ -80,14 +80,14 @@ mutate(e)
 
           
           <div className={`${icon_style}`  }>
-              <FcGoogle size={24} className="ml-20"/>
+              <FcGoogle size={24} className="ml-6"/>
             <p>Login with Google</p>
           </div>
 
            
 
              <div className={`${icon_style}`}>
-                <BsFacebook size={22} className="text-[#46A] ml-20" />
+                <BsFacebook size={22} className="text-[#46A] ml-6" />
                    
             <p>Login with Facebook</p>
           </div>

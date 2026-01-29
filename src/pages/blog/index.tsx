@@ -11,8 +11,8 @@ const Blog = () => {
 
 
         <Header />
-{/* 
-        <Bloog /> */}
+{/*  
+        <Bloog />  */}
 
         <Footer />
      
