@@ -1,6 +1,7 @@
  import { configureStore } from "@reduxjs/toolkit"
  import  modalSlice  from "./modal-store";
  import shopSlice from "./shopp/shop-slice";
+import  userSlice  from "./user-slice";
 
 
 
@@ -8,6 +9,7 @@
      reducer : {
          modalSlice,
          shopSlice,
+         userSlice
      } ,
  });
 

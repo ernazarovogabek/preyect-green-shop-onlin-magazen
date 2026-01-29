@@ -30,7 +30,7 @@ const Category = () => {
             {isLoading || isError ? categoryLoader() : data?.map((value) => (
                 <div onClick={() => setParam({ category: value.route_path, range_max, range_min, type, sort, })} key={value._id}
                  className={`flex items-center justify-between hover:text-nav cursor-pointer text-[#46a358] text-[15px] font-medium ${category === value.route_path ? "text-nav font-bold" : ""}`}>
-                    <h3>{value.title}</h3>
+                    <h3 className="mt-3">{value.title}</h3>
                     <h3>({value.count})</h3>
                 </div>
             ))}

@@ -18,15 +18,15 @@ const Home = () => {
 
         <Header />
        <Slideer />
-       <div className="flex w-[90%] m-auto gap-5 flex-wrap">
+       <div className="flex w-[90%] m-auto gap-5">
 
        <Category />
-       <Card />
-       <Products />
+        <Products /> 
        </div>
        <PlantSection />
        <Section />
          <Footer /> 
+       <Card />
     </div>
   )
 }

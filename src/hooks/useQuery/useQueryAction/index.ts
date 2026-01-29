@@ -1,82 +1,8 @@
-//  import { useMutation } from "@tanstack/react-query"
-//  import { useAxios } from "../../useAxios"
-
-
-
-
-
-
-//  export const useLoginMutation =() => {
-//      const axios = useAxios();
-//      return useMutation({
-//          mutationKey : ["login"],
-//          mutationFn :(data: object) => axios({ url:"user/sign-in", method : "POST" , body : data}),
-
-//          onSuccess(data) {
-//              console.log(data);
-//          }
-//      })
-//  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 import { useMutation } from '@tanstack/react-query'
 import { useAxios } from '../../useAxios'
-import { notificationApi } from '../../../generic/nofication';
+import { notificationApi } from '../../../generic/NotificationAPI';
 import Cookies from "js-cookie";
 import { setAuthorizationModalVisiblity } from '../../../redux/modal-store';
 import { useReduxDispatch } from '../../useRedux';

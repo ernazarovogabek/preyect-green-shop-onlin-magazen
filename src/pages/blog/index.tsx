@@ -1,8 +1,10 @@
 
 
+import Blogapi from '../../components/Bloog/blogapi'
 import  Footer  from '../../components/footer/Footer'
-//import Bloog from '../../components/Bloog'
+//import Bloog from '../../components/Bloog/authbar'
 import Header from '../../components/header'
+//import Shop from '../shop'
 
 
 const Blog = () => {
@@ -11,8 +13,9 @@ const Blog = () => {
 
 
         <Header />
-{/*  
-        <Bloog />  */}
+  
+        {/* <Bloog />   */}
+        <Blogapi />
 
         <Footer />
      

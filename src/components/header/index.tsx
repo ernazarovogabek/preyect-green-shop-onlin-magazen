@@ -134,6 +134,21 @@ const Header = () => {
           >
             Blog
           </Link>
+
+
+
+             <Link
+            to="/shop"
+            className={`${
+              pathname === "/shop" ? "text-main font-semibold" : ""
+            }`}
+          >
+            Shop
+          </Link>
+
+
+
+
         </nav>
 
         {/* DESKTOP ACTIONS */}

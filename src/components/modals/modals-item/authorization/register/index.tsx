@@ -1,7 +1,7 @@
 
 import { Form, Input } from "antd";
 import type { RegisterType } from "../../../../../@types";
-import { notificationApi } from "../../../../../generic/nofication/index";
+import { notificationApi } from "../../../../../generic/NotificationAPI/index";
 import { useRegisterMutation } from "../../../../../hooks/useQuery/useQueryAction";
 import { Loader } from "lucide-react";
 
