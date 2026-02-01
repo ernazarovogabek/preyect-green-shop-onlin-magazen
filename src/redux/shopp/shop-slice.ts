@@ -1,75 +1,81 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { ShopCartType } from "../../@types";
 
-interface InitialStateType {
-    data: ShopCartType[];
+
+
+
+
+
+
+
+
+
+
+// redux/shopp/shop-slice.ts (Yangi amallar qo'shish)
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import type { ProductType } from "../../@types";
+
+// Type kengaytirilgan (counter bor)
+interface CartItem extends ProductType {
+  counter: number;
+  userPrice: number; // Umumiy narx (price * counter)
 }
 
-const initialState: InitialStateType = {
-    data: JSON.parse(localStorage.getItem("shop") as string) || [],
+interface ShopState {
+  data: CartItem[];
+}
+
+const initialState: ShopState = {
+  data: [],
 };
 
 const shopSlice = createSlice({
-  name: "shop-slice",
+  name: "shop",
   initialState,
   reducers: {
-    getData(state, { payload }) {
-      if (state.data.find((value) => value._id === payload._id)) {
-        state.data = state.data.map((value) => {
-          if (value._id === payload._id) {
-            return {
-              ...value,
-              counter: value.counter + 1,
-              userPrice: value.price * value.counter,
-            };
-          }
-          return value;
-        });
-
-        localStorage.setItem("shop", JSON.stringify(state.data));
-
-        return;
+    getData: (state, action: PayloadAction<CartItem>) => {
+      const existingItem = state.data.find((item) => item._id === action.payload._id);
+      if (existingItem) {
+        existingItem.counter += 1;
+        existingItem.userPrice = existingItem.price * existingItem.counter;
+      } else {
+        state.data.push({ ...action.payload, counter: 1, userPrice: action.payload.price });
       }
-      state.data = [
-        ...state.data,
-        { ...payload, counter: 1, userPrice: payload.price },
-      ];
-
-      localStorage.setItem("shop", JSON.stringify(state.data));
     },
-    deleteData(state, { payload }) {
-      state.data = state.data.filter((value) => value._id !== payload);
-      localStorage.setItem("shop", JSON.stringify(state.data));
+    // YANGI: Increment
+    increment: (state, action: PayloadAction<string>) => {
+      const item = state.data.find((item) => item._id === action.payload);
+      if (item) {
+        item.counter += 1;
+        item.userPrice = item.price * item.counter;
+      }
     },
-
-    increment(state, { payload }) {
-      state.data = state.data.map((value) => {
-        if (value._id === payload) {
-          return {
-            ...value,
-            counter: value.counter += 1,
-            userPrice: value.price * value.counter,
-          };
-        }
-        return value;
-      });
-      localStorage.setItem("shop", JSON.stringify(state.data));
+    // YANGI: Decrement
+    decrement: (state, action: PayloadAction<string>) => {
+      const item = state.data.find((item) => item._id === action.payload);
+      if (item && item.counter > 1) {
+        item.counter -= 1;
+        item.userPrice = item.price * item.counter;
+      }
     },
-    decrement(state, { payload }) {
-      state.data = state.data.map((value) => {
-        if (value._id === payload) {
-          return {
-            ...value,
-            counter: value.counter === 1 ? 1 : value.counter -= 1,
-            userPrice: value.price * value.counter,
-          };
-        }
-        return value;
-      });
-      localStorage.setItem("shop", JSON.stringify(state.data));
+    // YANGI: Delete
+    removeItem: (state, action: PayloadAction<string>) => {
+      state.data = state.data.filter((item) => item._id !== action.payload);
     },
   },
 });
 
-export const { getData, deleteData, increment, decrement } = shopSlice.actions;
+export const { getData, increment, decrement, removeItem } = shopSlice.actions;
 export default shopSlice.reducer;
+
+
+
+
+
+
+
+
+
+
+
+
+

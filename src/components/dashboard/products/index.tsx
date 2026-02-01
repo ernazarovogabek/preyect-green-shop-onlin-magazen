@@ -6,6 +6,7 @@ import { loaderApi } from "../../../generic/loader/loader";
 import ProductsTitle from "../products_title";
 
 
+
 const Products = () => {
     const { getParam } = useSearchParamsHandler();
     const category = getParam("category") || "house-plants";
@@ -24,6 +25,7 @@ const Products = () => {
       const { productLoader } = loaderApi();
  return (
    <div>
+   
     <ProductsTitle />
      <div className="grid grid-cols-3 gap-5">
        {isLoading || isError
@@ -37,6 +39,9 @@ const Products = () => {
 }
 
 export default Products
+
+
+
 
 
 

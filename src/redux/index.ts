@@ -5,11 +5,13 @@ import  userSlice  from "./user-slice";
 
 
 
+
  export const store = configureStore ({
      reducer : {
          modalSlice,
          shopSlice,
-         userSlice
+         userSlice,
+         
      } ,
  });
 

@@ -8,4 +8,3 @@ const App = () => {
 
 export default App
 
-//https://pushhhhhh.netlify.app/

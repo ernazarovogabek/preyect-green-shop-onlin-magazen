@@ -1,5 +1,5 @@
 
-import { Card } from 'antd'
+//import { Card } from 'antd'
 import Category from '../../components/dashboard/category'
 import  Footer  from '../../components/footer/Footer'
 import Header from '../../components/header'
@@ -7,6 +7,7 @@ import Header from '../../components/header'
 import Products from '../../components/dashboard/products'
 import PlantSection from '../../components/PlantSection'
 import  Section  from '../../components/section'
+
 
 
 const Home = () => {
@@ -22,11 +23,12 @@ const Home = () => {
 
        <Category />
         <Products /> 
+       {/* <Card /> */}
        </div>
        <PlantSection />
        <Section />
+       
          <Footer /> 
-       <Card />
     </div>
   )
 }

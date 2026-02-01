@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Eye, MessageCircle, Heart, Loader, ArrowLeft, Calendar, User, Search as SearchIcon, ArrowRight, Leaf } from "lucide-react";
-import { Input, Skeleton, Empty, Tag, Modal, Form, message, Button } from "antd";
+import { Input, Skeleton, Empty, Modal, Form, message, Button } from "antd";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 
@@ -323,9 +323,7 @@ const Blogs: React.FC = () => {
 
                     <div className="p-8 flex flex-col h-full relative z-10">
                         <div className="flex justify-between items-start mb-4">
-                             <Tag className="m-0 bg-green-50 text-[#46A358] border-none px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-lg">
-                                Maqola
-                             </Tag>
+                             
                              <span className="text-xs text-gray-400 font-medium">
                                 {new Date().toLocaleDateString()}
                              </span>
@@ -365,3 +363,302 @@ const Blogs: React.FC = () => {
 };
 
 export default Blogs;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { useState, useEffect, useMemo } from "react";
+// import { useNavigate } from "react-router-dom";
+// import { 
+//   FaEye, 
+//   FaHeart, 
+//   FaSearch, 
+//   FaArrowRight, 
+//   FaCalendarAlt, 
+//   FaUser 
+// } from "react-icons/fa";
+// import { useQueryHandler } from "../../../hooks/useQuery";
+
+// interface BlogType {
+//   _id: string;
+//   title: string;
+//   short_description: string;
+//   content: string;
+//   created_at: string;
+//   created_by: string;
+//   views?: number;
+//   likes?: number;
+//   photo?: string; // Agar API rasm bersa
+// }
+
+// const BlogSectionInfo = () => {
+//   const navigate = useNavigate();
+//   const skeletonArray = [1, 2, 3, 4, 5, 6];
+
+//   const [searchTerm, setSearchTerm] = useState("");
+//   const [allBlogs, setAllBlogs] = useState<BlogType[]>([]);
+//   const [filteredBlogs, setFilteredBlogs] = useState<BlogType[]>([]);
+//   const [isSearching, setIsSearching] = useState(false);
+
+//   // API dan ma'lumot olish
+//   const { data: apiData = [], isLoading: apiLoading } = useQueryHandler({
+//     url: "user/blog",
+//     pathname: "blog",
+//     param: { search: "" },
+//   });
+
+//   // Ma'lumotlarni yuklash va keshdan olish
+//   useEffect(() => {
+//     if (apiData.length > 0) {
+//       setAllBlogs(apiData);
+//       setFilteredBlogs(apiData);
+//       localStorage.setItem("blogs_cache", JSON.stringify(apiData));
+//     } else {
+//       const stored = localStorage.getItem("blogs_cache");
+//       if (stored) {
+//         const parsed = JSON.parse(stored);
+//         setAllBlogs(parsed);
+//         setFilteredBlogs(parsed);
+//       }
+//     }
+//   }, [apiData]);
+
+//   // Qidiruv funksiyasi
+//   const handleSearch = () => {
+//     setIsSearching(true);
+//     setTimeout(() => {
+//       if (!searchTerm.trim()) {
+//         setFilteredBlogs(allBlogs);
+//       } else {
+//         const filtered = allBlogs.filter((blog) =>
+//           blog.title?.toLowerCase().includes(searchTerm.toLowerCase())
+//         );
+//         setFilteredBlogs(filtered);
+//       }
+//       setIsSearching(false);
+//     }, 400);
+//   };
+
+//   // Rasmlar bo'lmasa, chiroyli placeholderlar qo'yish uchun
+//   const getPlaceholderImage = (index: number) => {
+//     const images = [
+//       "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&q=80&w=800",
+//       "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&q=80&w=800",
+//       "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80&w=800",
+//       "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&q=80&w=800",
+//       "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?auto=format&fit=crop&q=80&w=800",
+//     ];
+//     return images[index % images.length];
+//   };
+
+//   return (
+//     <div className="min-h-screen bg-[#F8F9FA] font-sans">
+//       <div className="max-w-[1250px] mx-auto px-4 sm:px-6 py-16">
+        
+//         {/* HEADER SECTION */}
+//         <div className="text-center max-w-3xl mx-auto mb-16">
+//           <h2 className="text-[#3D3D3D] text-4xl md:text-5xl font-bold mb-4">
+//             Our Latest <span className="text-[#46A358]">Insights</span>
+//           </h2>
+//           <p className="text-[#727272] text-lg leading-relaxed">
+//             We are an online plant shop offering a wide range of cheap and trendy plants.
+//             Read our stories about care, growth, and nature.
+//           </p>
+          
+//           {/* SEARCH BAR */}
+//           <div className="mt-8 relative max-w-lg mx-auto">
+//             <input 
+//               type="text"
+//               placeholder="Search for articles..."
+//               value={searchTerm}
+//               onChange={(e) => setSearchTerm(e.target.value)}
+//               onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+//               className="w-full h-14 pl-6 pr-14 rounded-full border-none shadow-lg shadow-gray-200 outline-none focus:ring-2 focus:ring-[#46A358]/50 transition-all text-gray-600"
+//             />
+//             <button 
+//               onClick={handleSearch}
+//               className="absolute right-2 top-2 h-10 w-10 bg-[#46A358] rounded-full flex items-center justify-center text-white hover:bg-[#3c8c4b] transition-colors"
+//             >
+//               <FaSearch size={16} />
+//             </button>
+//           </div>
+//         </div>
+
+//         {/* BLOG GRID */}
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
+          
+//           {/* LOADING SKELETON */}
+//           {isSearching || (apiLoading && allBlogs.length === 0) ? (
+//             skeletonArray.map((_, idx) => (
+//               <div key={idx} className="bg-white rounded-[20px] overflow-hidden shadow-sm h-[420px] flex flex-col">
+//                 <div className="h-[220px] bg-gray-200 animate-pulse"></div>
+//                 <div className="p-6 flex-1 flex flex-col gap-3">
+//                   <div className="h-4 bg-gray-200 w-1/3 rounded animate-pulse"></div>
+//                   <div className="h-6 bg-gray-200 w-3/4 rounded animate-pulse mb-2"></div>
+//                   <div className="h-4 bg-gray-200 w-full rounded animate-pulse"></div>
+//                   <div className="h-4 bg-gray-200 w-2/3 rounded animate-pulse"></div>
+//                 </div>
+//               </div>
+//             ))
+//           ) : filteredBlogs.length === 0 ? (
+//             <div className="col-span-full py-20 text-center">
+//               <div className="inline-block p-6 rounded-full bg-gray-100 mb-4">
+//                 <FaSearch className="text-gray-400 text-3xl" />
+//               </div>
+//               <h3 className="text-xl font-bold text-gray-700">No articles found</h3>
+//               <p className="text-gray-500 mt-2">Try adjusting your search terms</p>
+//             </div>
+//           ) : (
+//             // DATA CARDS
+//             filteredBlogs.map((blog, idx) => (
+//               <article
+//                 key={blog._id}
+//                 onClick={() => navigate(`/blog/${blog._id}`)}
+//                 className="group bg-white rounded-[20px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(70,163,88,0.15)] transition-all duration-300 cursor-pointer flex flex-col h-full border border-gray-100 hover:border-[#46A358]/30"
+//               >
+//                 {/* IMAGE CONTAINER */}
+//                 <div className="relative h-[240px] overflow-hidden">
+//                   <img 
+//                     src={blog.photo || getPlaceholderImage(idx)} 
+//                     alt={blog.title} 
+//                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+//                   />
+//                   {/* Overlay Gradient */}
+//                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+                  
+//                   {/* Date Badge */}
+//                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-lg text-xs font-bold text-[#3D3D3D] shadow-sm flex items-center gap-2">
+//                     <FaCalendarAlt className="text-[#46A358]" />
+//                     {new Date(blog.created_at).toLocaleDateString()}
+//                   </div>
+//                 </div>
+
+//                 {/* CONTENT */}
+//                 <div className="p-6 flex flex-col flex-1 relative">
+//                   <div className="flex items-center gap-2 text-xs font-medium text-[#46A358] mb-3 uppercase tracking-wide">
+//                      <FaUser size={10} />
+//                      {blog.created_by || "GreenShop Admin"}
+//                   </div>
+
+//                   <h3 className="text-xl font-bold text-[#3D3D3D] mb-3 leading-tight group-hover:text-[#46A358] transition-colors line-clamp-2">
+//                     {blog.title}
+//                   </h3>
+
+//                   <p className="text-[#727272] text-sm leading-6 mb-6 line-clamp-3 flex-grow">
+//                     {blog.short_description || blog.content?.replace(/<[^>]*>/g, '').slice(0, 100) + "..."}
+//                   </p>
+
+//                   <div className="pt-5 border-t border-gray-100 flex items-center justify-between mt-auto">
+//                     <div className="flex items-center gap-4">
+//                        <span className="flex items-center gap-1.5 text-xs text-gray-500">
+//                           <FaEye className="text-[#46A358]" /> {blog.views || 0}
+//                        </span>
+//                        <span className="flex items-center gap-1.5 text-xs text-gray-500">
+//                           <FaHeart className="text-red-400" /> {blog.likes || 0}
+//                        </span>
+//                     </div>
+
+//                     <button className="flex items-center gap-2 text-sm font-bold text-[#3D3D3D] group-hover:text-[#46A358] transition-colors">
+//                       Read More <FaArrowRight className="transform group-hover:translate-x-1 transition-transform" size={12} />
+//                     </button>
+//                   </div>
+//                 </div>
+//               </article>
+//             ))
+//           )}
+//         </div>
+        
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default BlogSectionInfo;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
