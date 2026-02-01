@@ -1,16 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import shopReducer from "./shopp/shop-slice";
-import modalReducer from "./modal-store";
-import userReducer from "./user-slice";
-
+import modalSlice from "./modalSlice";
+import shopSlice from "./shopSlice";
+import trackOrderSlice from "./trackOrderSlice";
 export const store = configureStore({
   reducer: {
-    cart: shopReducer,  // shopSlice o'rniga cart (savatcha)
-    modal: modalReducer, // modal
-    user: userReducer,  // user slice qo'shildi
+    modalSlice,
+    shopSlice,
+    trackOrderSlice,
   },
 });
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
-export default store;
+export type DispatchType = typeof store.dispatch;
+export type RootStore = ReturnType<typeof store.getState>;

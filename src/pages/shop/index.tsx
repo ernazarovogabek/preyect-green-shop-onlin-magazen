@@ -1,24 +1,7 @@
-
-  import ProducstShop from "../../components/products-shop"
-
+import ShopComponent from "../../components/shop";
 
 const Shop = () => {
-  return (
-  <>
+  return <ShopComponent />;
+};
 
-    <ProducstShop />
-  </>
-  )
-}
-
-export default Shop
-
-
-
-
-
-
-
-
-
-
+export default Shop;

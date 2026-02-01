@@ -1,19 +1,27 @@
-import Header from "../header";
-import CardTotal from "./Card-Total";
+import { Breadcrumb } from "antd";
+import CardTotal from "./card-total";
 import Shopping from "./shopping";
+import { Link } from "react-router-dom";
 
-
-const ProductsShop = () => {
+const ProductsShopComponent = () => {
   return (
-    <div className="">
-      <Header/>
-      <div className="grid grid-cols-[3fr_1fr] gap-5 mt-5">
-        
+    <section className="w-[90%] m-auto py-5">
+      <Breadcrumb
+        items={[
+          {
+            title: <Link to="/">Home</Link>,
+          },
+          {
+            title: "Products shop",
+          },
+        ]}
+      />
+      <div className="grid grid-cols-[3fr_1fr] gap-5">
         <Shopping />
         <CardTotal />
       </div>
-    </div>
+    </section>
   );
-}
+};
 
-export default ProductsShop
+export default ProductsShopComponent;

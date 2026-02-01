@@ -1,40 +1,17 @@
-import { useReduxSelector } from "../../hooks/useRedux"
-import AuthorizationModal from "./modals-item/authorization"
-
-
-
+import { useReduxSelctor } from "../../hooks/useRedux";
+import AuthorizationModal from "./authorization-modals";
+import TrackModal from "./track-modal";
 
 const Modals = () => {
-
-    
-    const {authorizationModalVisiblity} = useReduxSelector((stata) => stata.modalSlice)
-
+  const { modalAuthorizationVisiblty, trackModalVisiblty } = useReduxSelctor(
+    (state) => state.modalSlice
+  );
   return (
     <>
-     
-   { authorizationModalVisiblity && <AuthorizationModal />}
-    
+      {modalAuthorizationVisiblty && <AuthorizationModal />}
+      {trackModalVisiblty && <TrackModal />}
     </>
-  )
-}
+  );
+};
 
-export default Modals
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default Modals;

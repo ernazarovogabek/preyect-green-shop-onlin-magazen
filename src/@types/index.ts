@@ -1,414 +1,144 @@
-
-
-
-
-// export interface AuthUser {
-//   _id: string;
-//   first_name: string;
-//   last_name: string;
-//   email: string;
-
-//   // 📍 Address info
-//   country?: string;
-//   town?: string;
-//   street_address?: string;
-//   additional_street_address?: string;
-//   state?: string;
-//   zip?: string;
-
-//   // 🔐 Auth
-//   token?: string;
-//   role?: "user" | "admin";
-
-//   // 🕒 Meta
-//   createdAt?: string;
-//   updatedAt?: string;
-// }
-
-
-
-
-
-// export interface AuthType {
-//   billing_address: {
-//     country: string;
-//     town: string;
-//     street_address: string;
-//     extra_address: string;
-//     state: string;
-//     zip: string;
-//   };
-//   create_account_limit: number;
-//   create_plant_limit: number;
-//   create_post_limit: number;
-//   created_at: string;
-//   created_by: string;
-//   email: string;
-//   followers: string[];
-//   hashtags: string[];
-//   name: string;
-//   order_list: string[];
-//   password: string;
-//   permission: {
-//     create: boolean;
-//     update: boolean;
-//     delete: boolean;
-//     read: boolean;
-//   };
-//   phone_number: string;
-//   profile_photo: string;
-//   surname: string;
-//   user_type: string;
-//   username: string;
-//   wishlist: string[];
-//   _id: string;
-// }
-
-// export interface RegisterType {
-//   name: string;
-//   surname: string;
-//   email: string;
-//   password: string;
-//   confirm_password: string;
-// }
-
-// export interface CategoryType {
-//   count: number;
-//   created_at: string;
-//   created_by: string;
-//   route_path: string;
-//   title: string;
-//   _id: string;
-// }
-
-// export interface QueryType<T> {
-//   isLoading: boolean;
-//   isError: boolean;
-//   data?: T;
-// }
-
-// export interface DiscountFlowerType {
-//   discoount_up_to: number;
-//   id: number;
-//   poster_image_url: string;
-//   title: string;
-// }
-
-
-
-
-// export interface HeroMockType{
-// id:number;
-// title: string;
-// subTitle: string;
-// description: string;
-// buttonText: string;
-// big_img_url: string;
-// small_img_url: string;
-// }
-
-
-
-
-
-
-// export interface ProductType {
-//   _id: string;
-//   title: string;
-//   price: number;
-//   main_image: string;
-//   discount: boolean;
-//   discount_price?: number;
-//   short_description: string;
-//   description: string;
-//   detailed_images: string[];
-//   rate: number;
-//   views: number;
-//   tags: [];
-//   comments: [];
-//   sold_items: number;
-//   created_by: string;
-//   created_at: string;
-//   category: string;
-//   count?: number | undefined;
-//   userPrice?: number;
-// }
-
-// export interface ProductsTitleType {
-//   id: number;
-//   title: string;
-//   route_path: string;
-// }
-
-// export interface ShopCartType extends ProductType {
-//   counter: number;
-//   userPrice: number;
-// }
-
-// export interface BlogType {
-//   _id: string;
-//   title: string;
-//   short_description: string;
-//   content: string;
-//   created_by: string;
-//   created_at: string;
-//   reaction_length: number;
-//   views?: number;
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export interface AuthType {
-  billing_address: {
-    country: string;
-    town: string;
-    street_address: string;
-    extra_address: string;
-    state: string;
-    zip: string;
-  };
-  create_account_limit: number;
-  create_plant_limit: number;
-  create_post_limit: number;
+import React from "react";
+
+export interface ComponentType {
+  children: React.ReactNode;
+}
+export interface FieldType {
+  email?: string;
+  password?: string;
+}
+export interface FieldTypeRegister {
+  name: string;
+  surname: string;
+  email?: string;
+  password?: string;
+}
+
+export interface HeroCarouselType {
+  id: number;
+  title: string;
+  subTitle: string;
+  description: string;
+  buttonText: string;
+  big_img_url: string;
+  small_img_url: string;
+}
+
+export interface CategoryType {
+  count: number;
   created_at: string;
   created_by: string;
-  email: string;
-  followers: string[];
-  hashtags: string[];
-  name: string;
-  order_list: string[];
-  password: string;
-  permission: {
+  route_path: string;
+  title: string;
+  _id: string;
+}
+
+export interface QueryType<T> {
+  isError: boolean;
+  isLoading: boolean;
+  data?: T;
+}
+export interface DiscountType {
+  _id: number;
+  title: string;
+  discoount_up_to: number;
+  poster_image_url: string;
+}
+export interface TitleCategoryType {
+  id: number;
+  title: string;
+  label: string;
+}
+
+export interface CartType {
+  category: string;
+  comments: string[];
+  description: string;
+  discount: boolean;
+  discount_price: string;
+  main_image: string;
+  price: number;
+  rate: number;
+  short_description: string;
+  sold_times: number;
+  tags: [];
+  title: string;
+  views: number;
+  _id: string;
+  detailed_images: string[];
+  created_by: string;
+}
+export interface PostMockItemType {
+  id: number;
+  title: string;
+  subTitle: string;
+  description: string;
+  img: string;
+}
+export interface InfoMockItemType {
+  id: number;
+  title: string;
+  description: string;
+  img: string;
+  vektor: string;
+}
+export interface FooterLinksType {
+  id: number;
+  title: string;
+  link1: string;
+  link2: string;
+  link3: string;
+  link4?: string;
+  link5?: string;
+}
+export interface AdviceMockItemType {
+  id: number;
+  title: string;
+  description: string;
+  img: string;
+  border: boolean;
+}
+export interface AuthUser2 {
+  _id?: string;
+  email?: string;
+  name?: string;
+  surname?: string;
+  profile_photo?: string;
+  create_account_limit?: number;
+  phone_number?: string;
+  username?: string;
+  followers?: string[];
+  street_address?: string;
+  country?: string;
+  town?: string;
+  additional_street_address?: string;
+  state?: string;
+  zip?: string;
+  permission?: {
     create: boolean;
     update: boolean;
     delete: boolean;
     read: boolean;
   };
-  phone_number: string;
-  profile_photo: string;
-  surname: string;
-  user_type: string;
-  username: string;
-  wishlist: string[];
-  _id: string;
 }
-
-export interface RegisterType {
-  name: string;
-  surname: string;
-  email: string;
-  password: string;
-  confirm_password: string;
-}
-export interface LoginResponse {
-  success: boolean;
-  message: string;
-  user?: {
-    id: string;
-    email: string;
-    name: string;
-  };
-}
-
-export interface LoginValues {
-  email: string;
-  password: string;
-}
-
-export interface HeroMockType{
-id:number;
-title: string;
-subTitle: string;
-description: string;
-buttonText: string;
-big_img_url: string;
-small_img_url: string;
-}
-
-export  interface CategoryType{
-  count: number;
-  created_at: string;
-  created_by:string;
-  route_path:string;
-  title:string;
-  _id:string;
-}
-
-export interface QueryType<T>{
-  isLoading: boolean;
-  isError: boolean;
-  data?:T;
-}
-export interface DiscountFlowerType {
-  discoount_up_to: number;
-  id: number;
-  poster_image_url: string;
-  title: string;
-}
-export interface ProductType {
-  _id: string;
-  title: string;
-  price: number;
-  main_image: string;
-  discount: boolean;
-  discount_price?: number;
-  short_description: string;
-  description: string;
-  detailed_images: string[];
-  rate: number;
-  views: number;
-  tags: [];
-  comments: [];
-  sold_items: number;
-  created_by: string;
-  created_at: string;
-  category: string;
-  count?: number | undefined;
-  userPrice?: number;
-}
-
-export interface ShopCartType extends ProductType {
-    counter: number;
-    userPrice: number;
-}
-export interface ProductsTitleType {
-  id: number;
-  title: string;
-  route_path: string;
-}
-export interface ShopCartType extends ProductType {
+export interface CartTypeData extends CartType {
   counter: number;
   userPrice: number;
 }
-export type UploadType = {
-  file: {
-    lastModified: number;
-    lastModifiedDate: Date;
-    name: string;
-    originalFileObj: typeof File;
-    response: {
-      message: string;
-      image_url: {
-        api_key: string;
-        asset_id: string;
-        bytes: number;
-        created_at: string;
-        etag: string;
-        folder: string;
-        format:
-          | "jpg"
-          | "svg"
-          | "jpag"
-          | "jpeg"
-          | "gif"
-          | "png"
-          | "eps"
-          | "raw"
-          | "cr2"
-          | "nef"
-          | "orf"
-          | "sr2";
-        height: number;
-        width: number;
-        original_extension: string;
-        original_filename: string;
-        placeholder: boolean;
-        public_id: string;
-        resource_type: "image" | "video" | "images" | "videos";
-        secure_url: string;
-        signature: string;
-        tags: string[];
-        type: "upload" | "pre-upload";
-        url: string;
-        version: number;
-        version_id: string;
-      };
-    };
-    size: number;
-    percent: number;
-    status: "done" | "failed";
-    thumbUrl: string;
-    type: string;
-    uid: string;
-    xhr: typeof XMLHttpRequest;
-  };
-};
-export interface UserType {
-  billing_address: {
-    country?: string;
-    town?: string;
-    street_address?: string;
-    additional_street_address?: string;
-    state?: string;
-    zip?: string;
-  };
-  create_account_limit: number;
-  create_plant_limit: number;
-  create_post_limit: number;
-  created_at: string;
-  created_by: string;
-  email: string;
-  followers: string[];
-  hashtags: string[];
-  name: string;
-  order_list: string[];
-  password: string;
-  permission: {
-    create: boolean;
-    update: boolean;
-    delete: boolean;
-    read: boolean;
-  };
-  phone_number: string;
-  profile_photo: string;
-  surname: string;
-  user_type: string;
-  username: string;
-  wishlist: string[];
-  _id: string;
+
+interface BillingAdres {
+  country?: string;
+  town?: string;
+  street_address?: string;
+  additional_street_address?: string;
+  state?: string;
+  zip?: string;
 }
+export interface WishListItemType {
+  flower_id: string;
+  route_path: string;
+}
+
 export interface AuthUser {
   _id?: string;
   email?: string;
@@ -417,14 +147,9 @@ export interface AuthUser {
   profile_photo?: string;
   create_account_limit?: number;
   phone_number?: string;
- 
+  wishlist?: WishListItemType[];
   username?: string;
-  country?: string;
-  town?: string;
-  street_address?: string;
-  additional_street_address?: string;
-  state?: string;
-  zip?: string;
+  billing_address?: BillingAdres;
   followers?: string[];
   permission?: {
     create: boolean;
@@ -433,19 +158,76 @@ export interface AuthUser {
     read: boolean;
   };
 }
-export interface BlogType {
-  _id: string;
-  title: string;
-  description: string;
-  viewCount: number;
-  commentCount: number;
-  likeCount: number;
-  content: string;
-  createdAt?: string;
+export interface MakeOrderType {
+  name: string;
+  surname: string;
+  country: string;
+  street: string;
+  state: string;
+  email: string;
+  zip: string;
+  appartment: string;
+  town: string;
+  phone_number: string;
+  comment: string;
+  payment_method: string;
 }
 
-export interface UserState {
-  isAuthenticated: boolean;
-  name?: string;
-  avatar?: string;
+export interface BlogType {
+  content: string;
+  created_at: string;
+  created_by: string;
+  reaction_length: number;
+  short_description: string;
+  title: string;
+  views: number;
+  _id: string;
+}
+export interface PathProfileType {
+  id: number;
+  title: string;
+  path: string;
+  Icon: React.ForwardRefExoticComponent<any>;
+  Components: React.FC;
+}
+
+export interface OrderType {
+  billing_address: BillingAdres;
+  created_at: string;
+  created_by: string;
+  extra_shop_info: {
+    total: number;
+    method: string;
+  };
+  shop_list: CartTypeData[];
+  _id: string;
+}
+
+export interface AdressType {
+  name: string;
+  surname: string;
+  country: string;
+  town: string;
+  street_adress: string;
+  additional_street_address: string;
+  state: string;
+  zip: string;
+  email: string;
+  phone_number: string;
+}
+export interface AccountDetails {
+  name: string;
+  surname: string;
+  email: string;
+  phone_number: string;
+  username: string;
+  profile_photo: {
+    file: {
+      response: {
+        image_url: {
+          url: string;
+        };
+      };
+    };
+  };
 }
