@@ -2,7 +2,7 @@ import { Form, Input, Radio } from "antd";
 import { cookieInfo } from "../../../generic/cookies";
 import { useReduxDispatch, useReduxSelctor } from "../../../hooks/useRedux";
 import { setModalAuthorizationModalVisiblty } from "../../../redux/modalSlice";
-import type { AuthUser, MakeOrderType } from "../../../@types";
+import { AuthUser, MakeOrderType } from "../../../@types";
 import { useMakeOrderList } from "../../../hooks/useQueryHandler/useQueryAction";
 import { LoadingOutlined } from "@ant-design/icons";
 const ProcedForm = () => {

@@ -16,7 +16,7 @@ const ProductsShopComponent = () => {
           },
         ]}
       />
-      <div className="grid grid-cols-[3fr_1fr] gap-5">
+      <div className="grid grid-cols-1 grid-cols-[3fr_1fr] gap-5">
         <Shopping />
         <CardTotal />
       </div>

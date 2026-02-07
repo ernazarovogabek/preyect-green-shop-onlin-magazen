@@ -1,6 +1,6 @@
 import { Table, Empty, Skeleton } from "antd";
 import useQueryHandler from "../../../../hooks/useQueryHandler";
-import type { OrderType } from "../../../../@types";
+import { OrderType } from "../../../../@types";
 import { useReduxDispatch } from "../../../../hooks/useRedux";
 import { setTrackModalVisiblty } from "../../../../redux/modalSlice";
 import { setOrder } from "../../../../redux/trackOrderSlice";

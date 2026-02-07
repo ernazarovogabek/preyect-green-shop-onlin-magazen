@@ -1,6 +1,6 @@
 import { useState, type FC } from "react";
 import { Image, Skeleton } from "antd";
-import type { CartType, QueryType } from "../../../@types";
+import { CartType, QueryType } from "../../../@types";
 
 const ShopSwiper: FC<QueryType<CartType>> = ({ data, isLoading, isError }) => {
   const [imgSrc, setImgSrc] = useState<string>("");

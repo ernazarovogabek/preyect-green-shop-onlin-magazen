@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getStore, setStore } from "../../generic/store";
-import type { CartTypeData } from "../../@types";
+import { CartTypeData } from "../../@types";
 
 interface InitialStateType {
   data: CartTypeData[];

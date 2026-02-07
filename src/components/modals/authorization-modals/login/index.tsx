@@ -1,6 +1,6 @@
 import { Form, Input } from "antd";
 import google from "../../../../assets/icons/google.svg";
-import type { FieldType } from "../../../../@types";
+import { FieldType } from "../../../../@types";
 import {
   useLoginMutate,
   useLoginWithGogole,

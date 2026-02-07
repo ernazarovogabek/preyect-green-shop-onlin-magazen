@@ -1,5 +1,5 @@
-import type { FC } from "react";
-import type { CategoryType } from "../../../../../@types";
+import { FC } from "react";
+import { CategoryType } from "../../../../../@types";
 import { useSearchParamsHandler } from "../../../../../hooks/useSearchParams";
 
 const CateogriesItem: FC<CategoryType> = (props) => {

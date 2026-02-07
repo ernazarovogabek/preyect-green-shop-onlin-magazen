@@ -34,9 +34,9 @@ const Products = () => {
     );
   }
   return (
-    <section className="w-full">
+    <section className="w-full lg:grid-cols-[1fr_1fr]">
       <ProductsTitle />
-      <div className="grid grid-cols-3 gap-4 mt-5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-5">
         {isLoading || isError
           ? cart_loader()
           : data?.map((value) => <Card key={value._id} {...value} />)}

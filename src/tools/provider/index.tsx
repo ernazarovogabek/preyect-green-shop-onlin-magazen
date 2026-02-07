@@ -1,5 +1,5 @@
-import type { FC } from "react";
-import type { ComponentType } from "../../@types";
+import { FC } from "react";
+import { ComponentType } from "../../@types";
 import Modals from "../../components/modals";
 import { Provider } from "react-redux";
 import { store as store2 } from "../../redux/store";

@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import useQueryHandler from "../../../hooks/useQueryHandler";
 import { Skeleton, Tooltip } from "antd";
 import type { AuthUser, BlogType } from "../../../@types";
-
+import Meta from "antd/es/card/Meta";
 import {
   EyeOutlined,
   HeartOutlined,
@@ -110,3 +110,4 @@ const Rendering = () => {
 };
 
 export default Rendering;
+

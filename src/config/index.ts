@@ -4,9 +4,9 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA41e4BfFNmiQT4xRW8TyomLcOLKOepMvU",
-  authDomain: "gren-shop-asliddin.firebaseapp.com",
-  projectId: "gren-shop-asliddin",
-  storageBucket: "gren-shop-asliddin.firebasestorage.app",
+  authDomain: "gren-shop-ernazarovogabek.firebaseapp.com",
+  projectId: "gren-shop-og'abek",
+  storageBucket: "gren-shop-og'abek.firebasestorage.app",
   messagingSenderId: "600423248511",
   appId: "1:600423248511:web:8bd79caa156112d41c054a",
   measurementId: "G-ZXJX9C3FMF"

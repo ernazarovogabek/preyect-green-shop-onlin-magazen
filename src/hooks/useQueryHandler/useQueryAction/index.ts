@@ -9,7 +9,7 @@ import { notificationApi } from "../../../generic/notification";
 import { signInWithGoogle } from "../../../config";
 import { cookieInfo } from "../../../generic/cookies";
 import { getCoupon } from "../../../redux/shopSlice";
-import type { OrderType } from "../../../@types";
+import { OrderType } from "../../../@types";
 
 export const useLoginMutate = () => {
   const axios = useAxios();

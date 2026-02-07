@@ -5,8 +5,8 @@ const FooterSotional = () => {
   const payme_style = "w-[30px] h-[30px] cursor-pointer";
   return (
     <div>
-      <h1 className={`${sotional_title}`}>Social Media</h1>
-      <div className="flex items-center gap-3 mt-[10px] mb-[30px]">
+      <h1 className={`${sotional_title} text-center`}>Social Media</h1>
+      <div className="flex items-center justify-center gap-3 mt-[10px] mb-[30px]">
         <div className={`${sotional_style}`}>
           <img
             src="https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Ficons%2Ffacebook.svg?alt=media&token=3db32f6e-a8c2-4dd2-829a-840b16fede49"
@@ -38,8 +38,8 @@ const FooterSotional = () => {
           />
         </div>
       </div>
-      <h1 className={`${sotional_title}`}>We accept</h1>
-      <div className="flex items-center gap-3 mt-[13px]">
+      <h1 className={`${sotional_title} text-center`}>We accept</h1>
+      <div className="flex items-center justify-center gap-3 mt-[13px]">
         <img
           className={`${payme_style}`}
           src="https://firebasestorage.googleapis.com/v0/b/aema-image-upload.appspot.com/o/greenshop%2Ficons%2Fpaypal.svg?alt=media&token=51f12650-aff4-485a-bbcb-0ee3f4e64cca"

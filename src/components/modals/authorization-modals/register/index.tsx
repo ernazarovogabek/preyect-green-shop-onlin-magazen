@@ -1,7 +1,7 @@
 import { Form, Input } from "antd";
 import facebook from "../../../../assets/icons/facebook.svg";
 import google from "../../../../assets/icons/google.svg";
-import type { FieldTypeRegister } from "../../../../@types";
+import { FieldTypeRegister } from "../../../../@types";
 import {
   useRegisterMutate,
   useRegisterWithGogole,

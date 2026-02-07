@@ -1,5 +1,5 @@
-import type { FC } from "react";
-import type { CartTypeData } from "../../../../@types";
+import { FC } from "react";
+import { CartTypeData } from "../../../../@types";
 import { DeleteFilled } from "@ant-design/icons";
 import { useReduxDispatch } from "../../../../hooks/useRedux";
 import { counterEdited, deleteData } from "../../../../redux/shopSlice";

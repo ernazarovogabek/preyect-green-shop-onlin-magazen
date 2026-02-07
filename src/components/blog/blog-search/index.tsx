@@ -1,3 +1,4 @@
+
 import { Input, Empty } from "antd";
 import { useState, useEffect } from "react";
 import useQueryHandler from "../../../hooks/useQueryHandler";
@@ -8,6 +9,7 @@ import { LoadingOutlined } from "@ant-design/icons";
 const BlogSerch = () => {
   const [search, setSearch] = useState("");
   const [filtered, setFiltered] = useState<BlogType[]>([]);
+  
   const { data, isLoading, isError }: QueryType<BlogType[]> = useQueryHandler({
     url: "user/blog",
     pathname: "blog",
@@ -27,7 +29,7 @@ const BlogSerch = () => {
   }, [search, data]);
 
   return (
-    <div className="my-6">
+    <div className="max-w-[90%] m-auto py-6 p-2 md:px-0">
       <Input.Search
         placeholder="Blog qidirish..."
         allowClear
@@ -35,15 +37,24 @@ const BlogSerch = () => {
         size="large"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="mb-4 w-full"
+        className="mb-6 w-full"
       />
-      <div className="grid grid-cols-3 gap-5 my-5">
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {isLoading || isError ? (
-          <div className="col-span-3 flex justify-center"><span><LoadingOutlined className="text-5xl text-green-500" /></span></div>
+          <div className="col-span-full flex justify-center p-2">
+            <LoadingOutlined className="text-4xl md:text-5xl text-green-500" />
+          </div>
         ) : filtered.length === 0 ? (
-          <div className="col-span-3 flex justify-center"><Empty description="Hech narsa topilmadi" /></div>
+          <div className="col-span-full flex justify-center p-2">
+            <Empty description="Hech narsa topilmadi" />
+          </div>
         ) : (
-          filtered.map((value) => <BlogCard key={value._id} {...value} />)
+          filtered.map((value) => (
+            <div key={value._id} className="w-full">
+              <BlogCard {...value} />
+            </div>
+          ))
         )}
       </div>
     </div>

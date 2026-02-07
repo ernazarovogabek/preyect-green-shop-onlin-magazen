@@ -1,7 +1,7 @@
 import { CommentOutlined, EyeOutlined, HeartOutlined } from "@ant-design/icons";
 import { Card } from "antd";
-import type { FC } from "react";
-import type { BlogType } from "../../../@types";
+import { FC } from "react";
+import { BlogType } from "../../../@types";
 import { useNavigate } from "react-router-dom";
 import { useAxios } from "../../../hooks/useAxios";
 const BlogCard: FC<BlogType> = ({

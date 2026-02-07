@@ -13,9 +13,9 @@ const Categories = () => {
     });
   const { category_laoder } = useLoader();
   return (
-    <div className="w-[310px] bg-[#fbfbfb]">
+    <div className="w-full lg:w-[280px] bg-[#fbfbfb]">
       <h3 className="text-[#3D3D3D] font-bold text-[16px] p-2">Categories</h3>
-      <div className="p-4">
+      <div className="p-2">
         {isLoading || isError
           ? category_laoder()
           : data?.map((value) => <CateogriesItem key={value._id} {...value} />)}
@@ -27,3 +27,4 @@ const Categories = () => {
 };
 
 export default Categories;
+

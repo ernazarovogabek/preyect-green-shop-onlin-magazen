@@ -1,6 +1,6 @@
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { type FC } from "react";
-import type { PostMockItemType } from "../../../../@types";
+import { PostMockItemType } from "../../../../@types";
 const PostItem: FC<PostMockItemType> = (props) => {
   return (
     <div className="bg-[#FBFBFB]">

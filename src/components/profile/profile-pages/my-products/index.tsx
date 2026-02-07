@@ -1,4 +1,4 @@
-import type { CartType, QueryType } from "../../../../@types";
+import { CartType, QueryType } from "../../../../@types";
 import useLoader from "../../../../generic/loader";
 import useQueryHandler from "../../../../hooks/useQueryHandler";
 import Card from "../../../home/store-products/products/card";

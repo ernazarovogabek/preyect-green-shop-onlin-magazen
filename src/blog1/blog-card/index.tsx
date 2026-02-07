@@ -40,3 +40,4 @@ const BlogCard: FC<BlogTypeItem> = (props) => {
 };
 
 export default BlogCard;
+
